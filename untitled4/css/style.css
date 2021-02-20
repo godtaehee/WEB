@@ -1,0 +1,45 @@
+h1 {
+    text-align: center;
+    font-size: 100px;
+    border-bottom: 3px solid black;
+    margin: 0;
+}
+
+div {
+    display: inline-block;
+}
+
+#large_box {
+    width: 100%;
+    height: 100%;
+}
+
+.inner {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+}
+
+a{
+    color: black;
+    text-decoration: none;
+}
+
+.document_paragraph {
+    padding: 30px;
+}
+.list {
+    position: relative;
+    height: 100%;
+    border-right: 1px solid black;
+}
+
+.inner {
+    display: grid;
+    grid-template-columns: 100px 1fr;
+}
+
+li {
+    list-style: none;
+    margin-bottom: 30px;
+}
