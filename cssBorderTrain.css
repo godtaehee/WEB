@@ -36,3 +36,36 @@ p.hidden{
 p.mix{
     border-style: dotted dashed solid double;
 }
+
+
+/*
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <p class="dotted">a dotted border</p>
+    <p class="dashed">a dashed border</p>
+    <p class="solid">solid</p>
+    <div class="solid">solidssssssssdi </div>
+    <p class="double">double</p>
+    <p class="groove">groove</p>
+    <p class="inset">inset</p>
+    <p class="outset">outset</p>
+    <p class="none">none</p>
+    <p class="hidden">hidden</p>
+    <p class="mix">mix</p>
+
+
+
+</body>
+</html>
+
+*/
