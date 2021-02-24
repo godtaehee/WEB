@@ -1,0 +1,104 @@
+#custom {
+    font-family: Arial, Helvetica, sans-serif;
+    border: 1px solid gray;
+    border-collapse: collapse;
+    width: 100%;
+
+}
+#custom tr{
+    border-bottom: 1px solid gray;
+}
+
+#custom th, #custom td{
+    text-align: left;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 3px;
+    border-right: 1px solid gray;
+}
+
+#custom th{
+    background-color: lightgreen;
+}
+
+#custom tr:nth-child(even){
+    background-color: #f2f2f2;
+}
+#custom tr:hover{
+    background-color: lightgray;
+}
+
+/*
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+<body>
+    <table id="custom">
+        <tr>
+            <th>header</th>
+            <th>header</th>
+            <th>header</th>
+        </tr>
+        <tr>
+            <td>lorem</td>
+            <td>lorem</td>
+            <td>lorem</td>
+        </tr>
+        <tr>
+            <td>lorem</td>
+            <td>lorem</td>
+            <td>lorem</td>
+        </tr>
+        <tr>
+            <td>lorem</td>
+            <td>lorem</td>
+            <td>lorem</td>
+        </tr>
+        <tr>
+            <td>lorem</td>
+            <td>lorem</td>
+            <td>lorem</td>
+        </tr>
+        <tr>
+            <td>lorem</td>
+            <td>lorem</td>
+            <td>lorem</td>
+        </tr>
+        <tr>
+            <td>lorem</td>
+            <td>lorem</td>
+            <td>lorem</td>
+        </tr>
+        <tr>
+            <td>lorem</td>
+            <td>lorem</td>
+            <td>lorem</td>
+        </tr>
+        <tr>
+            <td>lorem</td>
+            <td>lorem</td>
+            <td>lorem</td>
+        </tr>
+        <tr>
+            <td>lorem</td>
+            <td>lorem</td>
+            <td>lorem</td>
+        </tr>
+        <tr>
+            <td>lorem</td>
+            <td>lorem</td>
+            <td>lorem</td>
+        </tr>
+    </table>
+</body>
+</html>
+*/
