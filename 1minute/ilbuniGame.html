@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Interactive Web</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="stage">
+        <div class="ilbuni"></div>
+        <div class="ilbuni"></div>
+        <div class="ilbuni"></div>
+        <div class="ilbuni"></div>
+    </div>
+
+    <script>
+        (function (){
+            const stage = document.querySelector('.stage');
+            stage.addEventListener('click', function (e){
+                console.log(e.target);
+                const target = e.target;
+                if(target.classList.contains('ilbuni'))
+                    stage.removeChild(target);
+            })
+        })();
+    </script>
+</body>
+</html>
+
+<!--
+.stage {
+    position: relative;
+    overflow: hidden;
+    width: 100vw;
+    height: 75vw;
+    background-color: #fff000;
+}
+
+@keyframes sample-ani {
+    from{
+        transform: translateX(0);
+    }
+    to{
+        transform: translate(90vw,-70vw) rotate(360deg);
+    }
+}
+
+.ilbuni {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    border: 1px solid black;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    background-size: contain;
+    animation: sample-ani infinite alternate;
+}
+
+.ilbuni:nth-of-type(1) {
+    left: 5%;
+    bottom: 5%;
+    background-image: url("../images/ilbuni_0.png");
+    animation-duration: 2s;
+}
+.ilbuni:nth-of-type(2) {
+    left: 10%;
+    bottom: 3%;
+    background-image: url("../images/ilbuni_1.png");
+    animation-duration: 3s;
+
+
+}
+.ilbuni:nth-of-type(3) {
+    left: 10%;
+    bottom: 7%;
+    background-image: url("../images/ilbuni_2.png");
+    animation-duration: 4s;
+
+
+}
+.ilbuni:nth-of-type(4) {
+    left: 8%;
+    bottom: 10%;
+    background-image: url("../images/ilbuni_3.png");
+    animation-duration: 5s;
+}
+
+
+-->
