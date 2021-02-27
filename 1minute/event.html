@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Interactive Web</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="menu">
+    <!--    <button class="button" data-value="1"><img class="icon" src="images/ilbuni_1.png" alt=""><span class="btn-label">일분이1</span></button>
+        <button class="button" data-value="2"><img class="icon" src="images/ilbuni_2.png" alt=""><span class="btn-label">일분이2</span></button>
+        <button class="button" data-value="3"><img class="icon" src="images/ilbuni_3.png" alt=""><span class="btn-label">일분이3</span></button>
+-->    </div>
+
+    <script>
+        const menu = document.querySelector('.menu');
+        function  clickHandler(e){
+            let elem = e.target;
+            while(!elem.classList.contains('button')){
+                elem = elem.parentNode;
+                if(elem.nodeName == 'BODY'){
+                    elem = null;
+                    console.log('sss');
+                    return;
+                }
+            }
+
+            console.log(elem.dataset.value);
+            // console.log(e.target.getAttribute('data-value'));
+            console.log(e.target.dataset);
+        }
+
+        menu.addEventListener('click', clickHandler);
+
+        window.addEventListener('click', () => {
+            const str = "    <button class=\"button\" data-value=\"1\"><img class=\"icon\" src=\"images/ilbuni_1.png\" alt=\"\"><span class=\"btn-label\">일분이1</span></button>\n" +
+                    "        <button class=\"button\" data-value=\"2\"><img class=\"icon\" src=\"images/ilbuni_2.png\" alt=\"\"><span class=\"btn-label\">일분이2</span></button>\n" +
+                    "        <button class=\"button\" data-value=\"3\"><img class=\"icon\" src=\"images/ilbuni_3.png\" alt=\"\"><span class=\"btn-label\">일분이3</span></button>\n";
+            menu.innerHTML = str;
+        })
+    </script>
+</body>
+</html>
+
+
+<!--
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.menu {
+    width: 20vw;
+    height: 20vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.button {
+    display: flex;
+    border: 3px solid red;
+}
+
+img {
+    width: 100px;
+    height: 100px;
+}
+.btn-label {
+    /*pointer-events: none;*/
+}
+.icon {
+    /*pointer-events: none;*/
+}
+-->
