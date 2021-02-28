@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/reset.css">
+    <title>Document</title>
+    <style>
+        .card{
+            display: inline-flex;
+            border-radius: 1rem;
+            width: 100px;
+            height: 150px;
+            font-size: 50px;
+            justify-content: center;
+            align-items: center;
+            border: 3px solid black;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        function Card(digit, color) {
+            this.digit = digit;
+            this.color = color;
+            this.init();
+        }
+
+        Card.prototype = {
+            constructor : Card,
+            init : function () {
+                const tmp = document.createElement('div');
+                tmp.classList.add('card');
+                tmp.style.color=this.color;
+                tmp.innerHTML = this.digit;
+                document.body.appendChild(tmp);
+            }
+        }
+        const red = new Card('7', 'blue');
+        const black = new Card('3', 'black');
+    </script>
+</body>
+</html>
