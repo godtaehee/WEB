@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/style.css">
+<!--    <style>
+        body {
+            background-color: #ffee00;
+            height: 500vw;
+        }
+
+        .world {
+            position: fixed;
+            perspective: 1000px;
+            left: 0;
+            top: 0;
+            width: 100vw;
+            height: 100vh;
+        }
+
+        .stage {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100vw;
+            height: 100vh;
+            transform-style: preserve-3d;
+        }
+
+        .house {
+            width: 100vw;
+            height: 100vh;
+            transform-style: preserve-3d;
+            transform: translateZ(-490vw);
+        }
+
+        .wall {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100vw;
+            height: 100vh;
+            background: rgba(255,255,255,0.8);
+        }
+
+        .wall-front-a { transform: translateZ(300vw);}
+        .wall-front-b { transform: translateZ(50vw);}
+        .wall-front-c { transform: translateZ(-200vw);}
+        .wall-front-d { transform: translateZ(-450vw);}
+
+
+        .wall-content {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        .wall-left {
+            width: 1000vw;
+            transform: rotateY(90deg) translateZ(-500vw);
+        }
+
+        .wall-right {
+            width: 1000vw;
+            transform: rotateY(90deg) translateZ(-400vw);
+        }
+
+        .wall-title {
+            font-size: 5rem;
+        }
+
+
+        .progress-bar-con{
+            position: fixed;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 5px;
+            background: #555;
+            z-index: 999;
+        }
+
+        .progress-bar {
+            width: 0;
+            height: 100%;
+            background: #00a8ff;
+        }
+    </style>-->
+</head>
+<body>
+
+    <div class="progress-bar-con">
+        <div class="progress-bar"></div>
+    </div>
+
+    <div class="world">
+        <div class="stage">
+            <div class="house">
+                <section class="wall wall-left"></section>
+                <section class="wall wall-right"></section>
+                <section class="wall wall-front wall-front-a">
+                    <div class="wall-content">
+                        <h2 class="wall-title">안녕하세요</h2>
+                    </div>
+                </section>
+                <section class="wall wall-front wall-front-b">
+                    <div class="wall-content">
+                        <h2 class="wall-title">여러분</h2>
+                    </div>
+                </section>
+                <section class="wall wall-front wall-front-c">
+                    <div class="wall-content">
+                        <h2 class="wall-title">반갑습니다</h2>
+                    </div>
+                </section>
+                <section class="wall wall-front wall-front-d">
+                    <div class="wall-content">
+                        <h2 class="wall-title">김태희입니다</h2>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        (function (){
+
+            const houseElem = document.querySelector('.house');
+            const progressBar = document.querySelector('.progress-bar');
+            const stageElem = document.querySelector('.stage');
+            const mousePos = { x:0, y:0 };
+            let maxScrollVal;
+            function resizeWindow(){
+                maxScrollVal = document.body.offsetHeight - window.innerHeight;
+            }
+            window.addEventListener('scroll', function () {
+                const scrollPer = pageYOffset / maxScrollVal;
+                let zMove = scrollPer*920 -490;
+                houseElem.style.transform = 'translateZ(' + zMove + 'vw)';
+                progressBar.style.width = scrollPer*100 + '%';
+            })
+
+            window.addEventListener('mousemove', function (e) {
+                mousePos.x = -1 + (e.clientX / window.innerWidth) * 2;
+                mousePos.y = 1 - (e.clientY / window.innerHeight) * 2;
+                stageElem.style.transform = 'rotateX(' + (3*mousePos.y) + 'deg) rotateY(' + (3*mousePos.x) + 'deg)';
+            })
+
+            window.addEventListener('resize', resizeWindow);
+            resizeWindow();
+        })();
+    </script>
+
+<!--    <script src="js/wall3d.js"></script>-->
+</body>
+</html>
