@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/reset.css">
+</head>
+<style>
+    body {
+        background: black;
+    }
+    .ball {
+        width: 100px;
+        height: 100px;
+        background: yellow;
+        border-radius: 30rem;
+        transition: 1s;
+        position: absolute;
+        left: 0;
+        top: 0;
+        /*margin: -50px -50px;*/
+    }
+
+    .ball.end {
+        background: dodgerblue;
+    }
+</style>
+<body>
+    <div class="ball">
+
+    </div>
+    <script>
+        const ballElem = document.querySelector('.ball');
+
+        window.addEventListener('click', function (e){
+            console.log(e.clientX, e.clientY);
+            console.log(ballElem.clientHeight);
+            ballElem.style.transform = 'translate(' + (e.clientX-ballElem.clientWidth/2) + 'px, ' + (e.clientY-ballElem.clientHeight/2) + 'px)';
+        });
+
+        ballElem.addEventListener('transitionstart', function (){
+            var colorCode = '#' + Math.round(Math.random() * 0xffffff).toString(16);
+            ballElem.style.background = colorCode;
+        });
+
+    </script>
+</body>
+</html>
