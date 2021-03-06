@@ -1,0 +1,34 @@
+
+      (() => {
+        const catImg = document.querySelector('.catImg');
+        const imgViewr = document.querySelector('.Modal');
+
+        // 이미지 킄ㄹ릭시
+        catImg.addEventListener('click', (e) => {
+            if(imgViewr.classList.contains('open')){
+              imgViewr.classList.remove('open');
+              imgViewr.classList.add('close');
+            }else {
+              imgViewr.classList.add('open');
+              imgViewr.classList.remove('close');
+            }
+        })
+
+        // 이미지 영역 밖 클릭시 레이어팝업창 닫기
+        imgViewr.addEventListener('click', (e) => {
+          if(e.target.classList.contains('open')) {
+            imgViewr.classList.remove('open');
+            imgViewr.classList.add('close');
+          }
+        })
+
+        // ESC 눌렀을때 레이어팝업창 닫기
+        window.addEventListener('keydown', (e) => {
+            if(e.keyCode === 27 && imgViewr.classList.contains('open')){
+              imgViewr.classList.remove('open');
+            imgViewr.classList.add('close');
+            }
+        })
+      })();
+  </body>
+</html>
