@@ -1,0 +1,152 @@
+html {
+  height: 100%;
+}
+body {
+  height: 100%;
+  margin: 0;
+}
+a {
+  text-decoration: none;
+  color: #515151;
+  height: auto;
+  width: auto;
+}
+
+li {
+  list-style: none;
+}
+
+/*-----------------------------------------------*/
+.botton {
+  height: 34px;
+  background: #eee linear-gradient(to bottom, #fcfcfc, #eee);
+  border: 1px solid #d5d5d5;
+  border-radius: 4px;
+  display: inline-flex;
+  align-items: center;
+  padding: 0 12px;
+  box-sizing: border-box;
+  position: relative;
+}
+
+.botton:hover::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.07);
+}
+
+/*----------------------------------------------*/
+#root {
+  height: 100%;
+
+  gap: 20px;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+}
+
+#root > * {
+  grid-column: 1 / span 12;
+}
+
+.d-none {
+  display: none;
+}
+
+.btn {
+  display: inline-block;
+  text-indent: -999px;
+  overflow: hidden;
+}
+
+/*-------------메인메뉴--------------*/
+
+.main-bar {
+}
+
+.main-menu {
+  font-family: AppleSDGothicNeoM00;
+  font-size: 25px;
+  color: #515151;
+  display: inline-block;
+  width: 100%;
+}
+
+.main-menu ul {
+  display: flex;
+  list-style: none;
+  justify-content: flex-end;
+  margin-right: 60px;
+}
+
+.main-menu ul li {
+  padding-left: 54px;
+}
+
+.main-menu .mypage-btn {
+  width: 72px;
+  background: url("images/hot.png") no-repeat;
+}
+
+.main-bar {
+  display: inline-block;
+}
+
+.main-bar ul {
+  display: flex;
+  height: 78px;
+}
+.main-bar ul li:nth-child(1) {
+  background: url("images/hot.png") no-repeat center center;
+  background-size: contain;
+  min-width: 144px;
+
+}
+
+.main-bar ul li:nth-child(2) {
+  background: url("images/new.png") no-repeat center center;
+  background-size: contain;
+  min-width: 144px;
+
+}
+
+/* .main-bar ul li:not(.first) {
+  background: url("/prjImg/new_btn.png") no-repeat center center;
+} */
+
+@media (max-width: 500px) {
+  .main-bar ul li:nth-child(1) {
+    background: url("images/hot.png") no-repeat center center;
+    background-size: contain;
+    min-width: 72px;
+
+  }
+
+  .main-bar ul li:nth-child(2) {
+    background: url("images/new.png") no-repeat center center;
+    background-size: contain;
+    min-width: 72px;
+
+  }
+}
+
+
+@media screen and (min-width: 800px) {
+  #root > #header {
+    --background-color: gray;
+  }
+
+  #root > #main {
+    background-color: darkgreen;
+
+    grid-column: 2 / span 8;
+    grid-row: 3 / span 9;
+  }
+
+  #root > #footer {
+    background-color: red;
+  }
+}
